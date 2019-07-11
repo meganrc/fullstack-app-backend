@@ -14,11 +14,11 @@ const employeeRoutes = require('./routes/employee'); //const employeeRoutes = ex
 
 app.use(cors());
 // app.use(bodyParser.json());
-app.use(express.json()); 
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 /*this takes control of requests starting with path: /api/employees */
-app.use('/api/employees', employeeRoutes); //idk if this corresponse with /todos, todoRoutes
+app.use('/api/employees', employeeRoutes); 
 
 mongoose.connect('mongodb://127.0.0.1:27017/employees', {useNewUrlParser: true});
 const connection = mongoose.connection;
